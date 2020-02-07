@@ -9,17 +9,43 @@ West <--|-->East\
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; South
 
 ##### Table Structure:
------------------------------
- 0,4 | 1,4 | 2,4 | 3,4 | 4,4 
------------------------------
- 0,3 | 1,3 | 2,3 | 3,3 | 4,3 
------------------------------
- 0,2 | 1,2 | 2,2 | 3,2 | 4,2 
------------------------------
- 0,1 | 1,1 | 2,1 | 3,1 | 4,1 
------------------------------
- 0,0 | 1,0 | 2,0 | 3,0 | 4,0 
------------------------------
+<table>
+  <tr>
+    <td>0,4</td>
+    <td>1,4</td>
+    <td>2,4</td>
+    <td>3,4</td>
+    <td>4,4</td>
+  </tr>
+  <tr>
+    <td>0,3</td>
+    <td>1,3</td>
+    <td>2,3</td>
+    <td>3,3</td>
+    <td>4,3</td>
+  </tr>
+  <tr>
+    <td>0,2</td>
+    <td>1,2</td>
+    <td>2,2</td>
+    <td>3,2</td>
+    <td>4,2</td>
+  </tr>
+   <tr>
+    <td>0,1</td>
+    <td>1,1</td>
+    <td>2,1</td>
+    <td>3,1</td>
+    <td>4,1</td>
+  </tr>
+   <tr>
+    <td>0,0</td>
+    <td>1,0</td>
+    <td>2,0</td>
+    <td>3,0</td>
+    <td>4,0</td>
+  </tr>
+</table>
 
 ##### Available commands: PLACE, MOVE, LEFT, RIGHT, REPORT
 where PLACE command has three parameters x_position, y_position and Direction (NORTH, SOUTH, EAST, WEST)

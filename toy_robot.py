@@ -6,6 +6,8 @@ DESCRIPTION: * To create the toy_robot with its properties.
              * To check and verify the values of properties whether they are valid or not.
 """
 
+from macros import TOY_ROBOT_DIRECTIONS, TOY_TURN_POSITIONS, TOY_MAIN_COMMANDS
+
 # Class for Toy-Robot creation and movements
 
 class ToyRobot:
@@ -18,12 +20,18 @@ class ToyRobot:
 	# Setting up the position of Toy Robot on the table (Class function/Member Function)
 	# Returns null
 	def set_placement_position(self, gvn_x_pos, gvn_y_pos, gvn_face_dir):
-		pass
+		self.x_pos = gvn_x_pos
+		self.y_pos = gvn_y_pos
+		self.face_dir = gvn_face_dir
 
 	# Validation of Place Command read from the user (Class function/Member Function)
 	# Returns True/False
 	def validate_place_command(self, gvn_x_pos, gvn_y_pos, gvn_face_dir):
-		pass
+		is_param_valid = False
+		if( gvn_x_pos > -1 and gvn_x_pos < 5 and gvn_y_pos > -1 and gvn_y_pos < 5 and gvn_face_dir.upper() in TOY_ROBOT_DIRECTIONS ) {
+			is_param_valid = True
+		}
+		return is_param_valid
 
 	# To check and move the Toy Robot in current direction by one unit place (Class function/Member Function)
 	# Returns True/False
