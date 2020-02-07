@@ -1,5 +1,6 @@
 import unittest
 from toy_robot import ToyRobot
+from app import *
 
 class ToyRobotTestCases(unittest.TestCase):
 
@@ -46,6 +47,22 @@ class ToyRobotTestCases(unittest.TestCase):
         self.assertEqual(toy_robot_obj.move_forward(), True)
         self.assertEqual(toy_robot_obj.move_forward(), False)
         self.assertEqual(toy_robot_obj.report_overall_position(), "4,1,EAST")
+
+    def test_check_space_present(self):
+        self.assertEqual("PLACE 0,0,NORTH", True)
+        self.assertEqual("PLACE 0,0, NORTH", False)
+        self.assertEqual("PL ACE 0,0,NORTH", False)
+        self.assertEqual("Place 0,0, North", False)
+
+    def parse_place_command(self):
+        parsed_val = {"x_pos": 0, "y_pos": 0, "direction": "NORTH"}
+        self.assertEqual("PLACE 0,0,NORTH", parsed_val)
+        parsed_val = {"x_pos": 1, "y_pos": 0, "direction": "South"}
+        self.assertEqual("Place 1,0,South", parsed_val)
+        parsed_val = None
+        self.assertEqual("PLACE 5,0,NORTH", parsed_val)
+        parsed_val = None
+        self.assertEqual("PLATE 1,0,NORTH", parsed_val)
 
 if __name__ == '__main__':
     unittest.main()
