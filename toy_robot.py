@@ -70,6 +70,8 @@ class ToyRobot:
 	# To report the position of the Toy Robot along with its facing direction (Class function/Member Function)
 	# Returns the position and direction in form of a string
 	def report_overall_position(self):
-		pass
-
+		resultant_val = ""
+		if self.x_pos > -1 and self.y_pos > -1:
+			resultant_val = resultant_val + self.x_pos + "," + self.y_pos + "," + self.face_dir
+		return resultant_val
 # EOF

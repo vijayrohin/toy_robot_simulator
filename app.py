@@ -62,7 +62,9 @@ def execute_main():
 		elif invoked_command == TOY_MAIN_COMMANDS[1] and len(given_command_split_up) == 1: # To check if its MOVE command
 			toy_robot_obj.move_forward()
 		elif invoked_command == TOY_MAIN_COMMANDS[2] and len(given_command_split_up) == 1: # To check if its REPORT command
-			pass
+			result = toy_robot_obj.report_overall_position()
+			if result != "":
+				print( result )
 		elif invoked_command == TOY_MAIN_COMMANDS[3] and len(given_command_split_up) == 1: # To check if its LEFT command
 			toy_robot_obj.turn_position(invoked_command)
 		elif invoked_command == TOY_MAIN_COMMANDS[4] and len(given_command_split_up) == 1: # To check if its RIGHT command
