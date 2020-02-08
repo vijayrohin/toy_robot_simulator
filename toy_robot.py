@@ -57,7 +57,7 @@ class ToyRobot:
 				comment = "Warning: Toy Robot cannot be moved forward, because it will fall off the table"
 		else:
 			is_move_cmd_valid = False
-			comment = "Warning: Toy Robot is not placed on the table. Please use a valid Place command to first place it on table. Example: 'PLACE 0,0,NORTH'"
+			comment = "Warning: Toy Robot is not placed on the table. Please use a valid Place command to place it on table."
 		return is_move_cmd_valid, comment
 
 	# To turn the Toy Robot on either side left or right after verification (Class function/Member Function)
@@ -70,7 +70,7 @@ class ToyRobot:
 			self._face_dir = available_directions[direction]
 			is_turn_cmd_valid = True
 		else:
-			comment = "Warning: Toy Robot is not placed on the table. Please use a valid Place command to first place it on table. Example: 'PLACE 0,0,NORTH'"
+			comment = "Warning: Toy Robot is not placed on the table. Please use a valid Place command to place it on table."
 		return is_turn_cmd_valid, comment
 
 	# To report the position of the Toy Robot along with its facing direction (Class function/Member Function)
