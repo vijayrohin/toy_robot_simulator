@@ -16,53 +16,55 @@ class ToyRobotTestCases(unittest.TestCase):
     def test_move_forward_command(self):
         toy_robot_obj = ToyRobot()
         toy_robot_obj.set_placement_position(0,1,"EAST")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), False)
-        self.assertEqual(toy_robot_obj.move_forward(), False)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], False)
+        self.assertEqual((toy_robot_obj.move_forward())[0], False)
 
     def test_turn_position(self):
         toy_robot_obj = ToyRobot()
         toy_robot_obj.set_placement_position(0,1,"EAST")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
         toy_robot_obj.turn_position("LEFT")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), False)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], False)
 
     def test_report_overall_position(self):
         toy_robot_obj = ToyRobot()
         toy_robot_obj.set_placement_position(0,0,"NORTH")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
         toy_robot_obj.turn_position("RIGHT")
         toy_robot_obj.turn_position("LEFT")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
         toy_robot_obj.turn_position("RIGHT")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
         toy_robot_obj.turn_position("RIGHT")
-        self.assertEqual(toy_robot_obj.move_forward(), True)
-        self.assertEqual(toy_robot_obj.move_forward(), False)
-        self.assertEqual(toy_robot_obj.report_overall_position(), "4,1,EAST")
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], True)
+        self.assertEqual((toy_robot_obj.move_forward())[0], False)
+        self.assertEqual(toy_robot_obj.report_overall_position(), "2,0,SOUTH")
 
     def test_check_space_present(self):
-        self.assertEqual("PLACE 0,0,NORTH", True)
-        self.assertEqual("PLACE 0,0, NORTH", False)
-        self.assertEqual("PL ACE 0,0,NORTH", False)
-        self.assertEqual("Place 0,0, North", False)
+        self.assertEqual(check_space_present("PLACE 0,0,NORTH"), True)
+        self.assertEqual(check_space_present("PLACE 0,0, NORTH"), True)
+        self.assertEqual(check_space_present("PL ACE 0,0,NORTH"), False)
+        self.assertEqual(check_space_present("Place 0,0, No rth"), True)
 
     def parse_place_command(self):
         parsed_val = {"x_pos": 0, "y_pos": 0, "direction": "NORTH"}
-        self.assertEqual("PLACE 0,0,NORTH", parsed_val)
+        self.assertEqual(parse_place_command("PLACE 0,0,NORTH"), parsed_val)
         parsed_val = {"x_pos": 1, "y_pos": 0, "direction": "South"}
-        self.assertEqual("Place 1,0,South", parsed_val)
+        self.assertEqual(parse_place_command("Place 1,0,South"), parsed_val)
         parsed_val = None
-        self.assertEqual("PLACE 5,0,NORTH", parsed_val)
+        self.assertEqual(parse_place_command("PLACE 5,0,NORTH"), parsed_val)
         parsed_val = None
-        self.assertEqual("PLATE 1,0,NORTH", parsed_val)
+        self.assertEqual(parse_place_command("PLATE 1,0,NORTH"), parsed_val)
 
 if __name__ == '__main__':
     unittest.main()
