@@ -6,7 +6,7 @@ DESCRIPTION: * To create the toy_robot with its properties.
              * To check and verify the values of properties whether they are valid or not.
 """
 
-from macros import TOY_ROBOT_DIRECTIONS, TOY_TURN_POSITIONS, TOY_MAIN_COMMANDS, TOY_OPERATOR_CMD_DICT
+from macros import TOY_ROBOT_DIRECTIONS, TOY_TURN_POSITIONS, TOY_MAIN_COMMANDS, TOY_OPERATOR_CMD_DICT, TOY_TURN_POS_VAL
 import operator
 
 # Class for Toy-Robot creation and movements
@@ -60,7 +60,12 @@ class ToyRobot:
 	# To turn the Toy Robot on either side left or right after verification (Class function/Member Function)
 	# Returns True/False
 	def turn_position(self, direction):
-		pass
+		is_turn_cmd_valid = False
+		if self.x_pos > -1 and self.y_pos > -1: # To check if toy robot has been placed on the table already
+			available_directions = TOY_TURN_POS_VAL[self.face_dir]
+			self.face_dir = available_directions[direction]
+			is_turn_cmd_valid = True
+		return is_turn_cmd_valid
 
 	# To report the position of the Toy Robot along with its facing direction (Class function/Member Function)
 	# Returns the position and direction in form of a string

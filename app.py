@@ -60,13 +60,13 @@ def execute_main():
 				toy_robot_obj.set_placement_position( parsed_dict.x_pos, parsed_dict.y_pos, parsed_dict.direction )
 			}
 		elif invoked_command == TOY_MAIN_COMMANDS[1] and len(given_command_split_up) == 1: # To check if its MOVE command
-			pass
+			toy_robot_obj.move_forward()
 		elif invoked_command == TOY_MAIN_COMMANDS[2] and len(given_command_split_up) == 1: # To check if its REPORT command
 			pass
 		elif invoked_command == TOY_MAIN_COMMANDS[3] and len(given_command_split_up) == 1: # To check if its LEFT command
-			pass
+			toy_robot_obj.turn_position(invoked_command)
 		elif invoked_command == TOY_MAIN_COMMANDS[4] and len(given_command_split_up) == 1: # To check if its RIGHT command
-			pass
+			toy_robot_obj.turn_position(invoked_command)
 
 if __name__ == '__main__':
 	execute_main()
