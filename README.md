@@ -81,8 +81,7 @@ REA Toy Robot Coding Challenge involves movements of toy robot across a table of
 > - *macros.py* - Global constants (Available commands) and corresponding values
 > - *README.md* - Higlights the important points and describes the solution
 > - *PROBLEM.md* - Description of the given problem
-> - *Testcases* - Contains Sample Testcases from PROBLEM.md file
-> - *toy-robot_TESTCASES.py* - Documentation of all testcases verified with the simulator 
+> - *Overall_Tests_Documentation.pdf* - Documentation of all testcases (Overall) verified with the simulator 
 >
 
 This challenge involves toy robot simulation of movements on a table in 5x5 size (as shown in above table). It's simple and powerful to implement using python programming. Therefore, this solution is developed based on OOP principles (Object-Oriented Programming). Here the class concept is implemented for the toy robot with its features as class variables and functions as class methods. Each major line of code is commented with its description. The sequence of program flow starts from main function, accessing the class contents using class object and renders the result using REPORT command.
