@@ -100,4 +100,4 @@ This challenge involves toy robot simulation of movements on a table in 5x5 size
 > - *Unit Testcases and Integration Testcases* - All the unit testcases and integration testcases are considered and documented along with expected & actual results
 >
 
-![Sample Execution](sample_screenshot.png?raw=true "Sample Testcase Screenshot")
+![Sample Execution](sample_screenshot.PNG?raw=true "Sample Testcase Screenshot")
